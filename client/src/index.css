@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
 /*antd override */
 input{
   border-radius: 2px;
@@ -18,9 +29,15 @@ label{
 }
 /* common styling */
 
-.card title{
+.card-title{
   font-size: 1.5rem;
   font-weight: bold;
+  background-color: rgb(255, 128, 0);
+  color: white !important;
+  max-width: max-content !important;
+  padding: 7px 15px;
+  margin-left: -40px;
+  border-bottom-left-radius: 10px;
 }
 
 .normal-text{
@@ -39,6 +56,14 @@ label{
   color: white;
   font-size: 18px !important;
 }
+.anchor{
+  color: black !important;
+  text-decoration: underline ;
+  font-size: 16px !important;
+}
+.anchor:hover{
+  text-decoration: underline !important;
+}
 
 /* authentication pages */
 
@@ -48,3 +73,4 @@ label{
   align-items: center;
   justify-content: center;
 }
+
