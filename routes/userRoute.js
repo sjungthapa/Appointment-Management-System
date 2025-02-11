@@ -3,6 +3,7 @@ const router = express.Router();
 const User = require("../models/userModel");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const authMiddleware = require("../middlewares/authMiddleware");
 require("dotenv").config(); // Ensure .env is loaded
 
 // ✅ Debugging Log (Remove later)
@@ -78,6 +79,27 @@ router.post("/login", async (req, res) => {
                 email: user.email,
             },
         });
+    } catch (error) {
+        res.status(500).json({ message: "Server error", success: false, error: error.message });
+    }
+});
+
+router.post('/get-user-info-by-id', authMiddleware, async (req, res) => {
+    try {
+        // Query using _id instead of id
+        const user = await User.findOne({ _id: req.body.userId });
+
+        if (!user) {
+            return res.status(404).json({ message: "User not found", success: false });
+        } else {
+            return res.status(200).json({
+                success: true,
+                data: {
+                    name: user.name,
+                    email: user.email,
+                }
+            });
+        }
     } catch (error) {
         res.status(500).json({ message: "Server error", success: false, error: error.message });
     }
