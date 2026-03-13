@@ -3,65 +3,130 @@
 *{
   font-family: "Noto Sans", sans-serif;
   font-optical-sizing: auto;
-  font-weight: <weight>;
   font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: #f5f5f5;
 }
 
 /*antd override */
 input{
-  border-radius: 2px;
-  border: 1px solid rgba(128, 128, 128, 0.386) !important;
+  border-radius: 5px !important;
+  border: 1px solid #d9d9d9 !important;
   height: 40px !important;
+  padding: 8px 12px !important;
+  transition: all 0.3s ease !important;
 }
+
 input:focus{
   outline: none !important;
-  box-shadow: none !important;
-  border: 1px solid gray !important;
+  box-shadow: 0 0 0 2px rgba(12, 100, 100, 0.1) !important;
+  border: 1px solid rgb(12, 100, 100) !important;
 }
+
 label{
-  font-size: 16px !important;
-  color: black !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  color: #333 !important;
+  margin-bottom: 5px !important;
 }
+
 .ant-form-item{
-  margin: 10px 0 !important;
+  margin-bottom: 20px !important;
 }
+
 /* common styling */
 
+.spinner-parent{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 9999;
+}
+
+.spinner-border{
+  width: 3rem;
+  height: 3rem;
+  border: 0.3rem solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
 .card-title{
-  font-size: 1.5rem;
-  font-weight: bold;
-  background-color: rgb(255, 128, 0);
+  font-size: 1.3rem;
+  font-weight: 600;
+  background-color: rgb(12, 100, 100);
   color: white !important;
   max-width: max-content !important;
-  padding: 7px 15px;
-  margin-left: -40px;
-  border-bottom-left-radius: 10px;
+  padding: 8px 20px;
+  margin-left: -30px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .normal-text{
   font-size: 1rem;
 }
+
 .card{
-  box-shadow: 0 0 2px grey;
-  border-radius: 0 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px !important;
+  border: 1px solid #f0f0f0;
+  transition: all 0.3s ease;
+  padding: 20px;
+}
+
+.card:hover{
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
 }
 
 .primary-button{
-  background-color: rgb(12, 100, 100);
-  border-color: rgb(12, 100, 100);
+  background-color: rgb(12, 100, 100) !important;
+  border-color: rgb(12, 100, 100) !important;
   height: 40px !important;
   width: 100% !important;
-  color: white;
-  font-size: 18px !important;
-}
-.anchor{
-  color: black !important;
-  text-decoration: underline ;
+  color: white !important;
   font-size: 16px !important;
+  font-weight: 500 !important;
+  border-radius: 5px !important;
+  transition: all 0.3s ease !important;
+  cursor: pointer;
 }
+
+.primary-button:hover{
+  background-color: rgb(8, 70, 70) !important;
+  border-color: rgb(8, 70, 70) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(12, 100, 100, 0.3) !important;
+}
+
+.anchor{
+  color: rgb(12, 100, 100) !important;
+  text-decoration: none !important;
+  font-size: 14px !important;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
 .anchor:hover{
+  color: rgb(8, 70, 70) !important;
   text-decoration: underline !important;
 }
 
@@ -72,5 +137,485 @@ label{
   display: flex;
   align-items: center;
   justify-content: center;
+  background: linear-gradient(135deg, rgb(12, 100, 100) 0%, rgb(8, 70, 70) 100%);
 }
 
+.authentication-form{
+  max-width: 450px;
+  width: 100%;
+  margin: 20px;
+}
+
+.page-title{
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: rgb(12, 100, 100);
+  margin-bottom: 10px;
+}
+
+.cursor-pointer{
+  cursor: pointer;
+}
+
+.full-width-button{
+  width: 100%;
+}
+
+.header-action-icon{
+  font-size: 24px;
+  cursor: pointer;
+  color: rgb(12, 100, 100);
+  transition: all 0.3s ease;
+}
+
+.header-action-icon:hover{
+  color: rgb(8, 70, 70);
+}
+
+.logo{
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Table styling */
+.ant-table{
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.ant-table-thead > tr > th{
+  background-color: rgb(12, 100, 100) !important;
+  color: white !important;
+  font-weight: 600 !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sidebar{
+    width: 80px;
+  }
+  
+  .sidebar .menu-item a,
+  .sidebar .menu-item span{
+    display: none;
+  }
+  
+  .logo{
+    font-size: 16px;
+  }
+}
+
+
+/* Doctor Card Styling */
+.doctor-card{
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+  border: 1px solid #e8e8e8;
+}
+
+.doctor-card:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(12, 100, 100, 0.15);
+}
+
+.doctor-card-header{
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.doctor-avatar{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgb(12, 100, 100), rgb(8, 70, 70));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px;
+}
+
+.doctor-avatar i{
+  font-size: 40px;
+  color: white;
+}
+
+.doctor-name{
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: rgb(12, 100, 100);
+  margin: 10px 0 5px 0;
+}
+
+.doctor-specialization{
+  color: #666;
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.doctor-info{
+  margin: 15px 0;
+}
+
+.info-item{
+  display: flex;
+  align-items: center;
+  margin: 12px 0;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.info-item i{
+  font-size: 18px;
+  color: rgb(12, 100, 100);
+  margin-right: 10px;
+  width: 20px;
+}
+
+.fee-item{
+  background-color: #f0f9f9;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
+.fee-amount{
+  font-weight: 600;
+  color: rgb(12, 100, 100);
+  font-size: 1.1rem;
+}
+
+.book-now-btn{
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, rgb(12, 100, 100), rgb(8, 70, 70));
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.book-now-btn:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(12, 100, 100, 0.3);
+}
+
+.book-now-btn i{
+  font-size: 20px;
+}
+
+
+/* Home Page Styling */
+.home-header{
+  margin-bottom: 20px;
+}
+
+.page-subtitle{
+  color: #666;
+  font-size: 1rem;
+  margin-top: 5px;
+}
+
+.no-doctors{
+  text-align: center;
+  padding: 60px 20px;
+  color: #999;
+}
+
+.no-doctors i{
+  font-size: 80px;
+  color: #ddd;
+  margin-bottom: 20px;
+}
+
+.no-doctors h3{
+  font-size: 1.5rem;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.no-doctors p{
+  font-size: 1rem;
+  color: #999;
+}
+
+
+/* Profile Page Styling */
+.profile-card{
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.profile-view{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.profile-avatar{
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgb(12, 100, 100), rgb(8, 70, 70));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 12px rgba(12, 100, 100, 0.2);
+}
+
+.profile-avatar i{
+  font-size: 60px;
+  color: white;
+}
+
+.profile-info{
+  width: 100%;
+  max-width: 600px;
+}
+
+.profile-item{
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.profile-item:last-child{
+  border-bottom: none;
+}
+
+.profile-item label{
+  display: block;
+  font-size: 0.85rem !important;
+  color: #999 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px !important;
+  font-weight: 600 !important;
+}
+
+.profile-item p{
+  font-size: 1.1rem;
+  color: #333;
+  margin: 0;
+  font-weight: 500;
+}
+
+.role-badge{
+  display: inline-block;
+  padding: 6px 16px;
+  background: linear-gradient(135deg, rgb(12, 100, 100), rgb(8, 70, 70));
+  color: white !important;
+  border-radius: 20px;
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+}
+
+.status-badge{
+  display: inline-block;
+  padding: 6px 16px;
+  background-color: #52c41a;
+  color: white !important;
+  border-radius: 20px;
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+}
+
+.justify-content-end{
+  justify-content: flex-end;
+}
+
+
+/* Forgot Password Styling */
+.ant-steps{
+  margin-bottom: 30px;
+}
+
+.ant-steps-item-process .ant-steps-item-icon{
+  background-color: rgb(12, 100, 100) !important;
+  border-color: rgb(12, 100, 100) !important;
+}
+
+.ant-steps-item-finish .ant-steps-item-icon{
+  border-color: rgb(12, 100, 100) !important;
+}
+
+.ant-steps-item-finish .ant-steps-item-icon > .ant-steps-icon{
+  color: rgb(12, 100, 100) !important;
+}
+
+.ant-steps-item-finish > .ant-steps-item-container > .ant-steps-item-tail::after{
+  background-color: rgb(12, 100, 100) !important;
+}
+
+.justify-content-between{
+  justify-content: space-between;
+}
+
+
+/* Upload Styling */
+.avatar-uploader {
+  display: inline-block;
+}
+
+.avatar-uploader .ant-upload {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 2px dashed #d9d9d9;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.avatar-uploader .ant-upload:hover {
+  border-color: rgb(12, 100, 100);
+}
+
+.ant-upload-picture-circle-wrapper {
+  display: inline-block;
+}
+
+
+/* Public Home Page Styling */
+.public-home {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.public-navbar {
+  background: linear-gradient(135deg, rgb(12, 100, 100), rgb(8, 70, 70));
+  padding: 20px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand h1 {
+  color: white;
+  margin: 0;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.navbar-brand p {
+  color: rgba(255, 255, 255, 0.9);
+  margin: 5px 0 0 0;
+  font-size: 14px;
+}
+
+.navbar-actions {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-login-btn,
+.nav-register-btn {
+  padding: 10px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-login-btn {
+  background-color: white;
+  color: rgb(12, 100, 100);
+  border: 2px solid white;
+}
+
+.nav-login-btn:hover {
+  background-color: transparent;
+  color: white;
+}
+
+.nav-register-btn {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.nav-register-btn:hover {
+  background-color: white;
+  color: rgb(12, 100, 100);
+}
+
+.public-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.hero-section {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  color: rgb(12, 100, 100);
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.hero-section p {
+  font-size: 1.3rem;
+  color: #666;
+}
+
+.doctors-section {
+  margin-top: 40px;
+}
+
+.public-footer {
+  background-color: rgb(12, 100, 100);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 60px;
+}
+
+.public-footer p {
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .navbar-content {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-section p {
+    font-size: 1rem;
+  }
+}
