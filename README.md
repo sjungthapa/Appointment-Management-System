@@ -258,7 +258,7 @@ This project is licensed under the MIT License.
 
 ## 👨‍💻 Author
 
-Your Name - [Your GitHub](https://github.com/yourusername)
+[Your Name - [Your GitHub](https://github.com/yourusername)](https://github.com/sjungthapa)
 
 ## 🙏 Acknowledgments
 
